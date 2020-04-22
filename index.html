@@ -19,7 +19,7 @@
 					<div class="header__left">
 						<p class="header__author">Курс Анны Сычуговой</p>
 						<h1 class="header__title">Марафон 21 день «Леди Лайт»</h1>
-						<p class="header__slogan">Слоган??</p>
+						<p class="header__slogan">Онлайн курс  стройности"Леди Лайт" ЕШЬ. СТРОЙНЕЙ. ЛЮБИ.</p>
 						<p class="header__date">{{data["event"]["date"]}}</p>
 						<button type="button" class="template-btn" id="headerToPaymentBtn">
 							<span>Принять участие</span>
@@ -136,26 +136,6 @@
 			</div>
 		</div>
 
-		<!-- VIDEO BLOCK -->
-		<div class="video-block">
-			<div class="layout-center-wrapper">
-				<div class="video-block__inner">
-					<div class="video-block__left">
-						<h3 class="video-block__title">специально для вас мы записали видео о&nbsp;курсе</h3>
-
-						<p class="video-block__text">В нем мы расскажем о том, как проходит курс, его особенностях и
-							преимуществах</p>
-					</div>
-
-					<div class="video-block__right">
-						<iframe class="video-block__frame" src="https://www.youtube.com/embed/MAgr_Z2UCG0"
-							frameborder="0" allow="accelerometer; encrypted-media; gyroscope; picture-in-picture"
-							allowfullscreen=""></iframe>
-					</div>
-				</div>
-			</div>
-		</div>
-
 		<!-- CAUCH BLOCK -->
 		<div class="coach-block">
 			<div class="layout-center-wrapper">
@@ -268,7 +248,28 @@
 				<!-- PAYMENT BLOCK -->
 				<div class="payment" id="paymentBlock">
 					<div class="payment__header">
-						<span class="payment__text">Стоимость тренинга:</span>
+							<span class="payment__text">Стоимость тренинга СТАНДАРТ:</span>
+							<span class="payment__amount">2700 ₽</span>
+						</div>
+						<div class="payment__inner">
+							<div class="payment__btns-wrap">
+								<button class="template-btn" type="button" id="cardBtn2">
+									<span>Оплатить картой</span>
+								</button>
+	
+								<img src="img/visa-logo.svg" alt="visa">
+							</div>
+							<div class="payment__btns-wrap">
+								<button class="template-btn" type="button" id="ntzdBtn2">
+									<span>Оплатить в ntz</span>
+								</button>
+								<img src="img/ntz-logo.svg" alt="visa">
+							</div>
+						</div>
+						<div class="payment__inner"></div>
+
+					<div class="payment__header">
+						<span class="payment__text">Стоимость тренинга ПРЕМИУМ:</span>
 						<span class="payment__amount">{{item['price']}} ₽</span>
 					</div>
 
