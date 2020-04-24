@@ -1,4 +1,4 @@
-{% set item = data['items']['merchant_beauty']['products'][0] %}
+{% set item = data['items']['annafoody1']['products'][0] %}
 
 <!DOCTYPE html>
 <html lang="ru">
@@ -253,14 +253,14 @@
 						</div>
 						<div class="payment__inner">
 							<div class="payment__btns-wrap">
-								<button class="template-btn" type="button" id="cardBtn2">
+								<button class="template-btn" type="button" id="cardBtn">
 									<span>Оплатить картой</span>
 								</button>
 	
 								<img src="img/visa-logo.svg" alt="visa">
 							</div>
 							<div class="payment__btns-wrap">
-								<button class="template-btn" type="button" id="ntzdBtn2">
+								<button class="template-btn" type="button" id="ntzdBtn">
 									<span>Оплатить в ntz</span>
 								</button>
 								<img src="img/ntz-logo.svg" alt="visa">
@@ -270,20 +270,20 @@
 
 					<div class="payment__header">
 						<span class="payment__text">Стоимость тренинга ПРЕМИУМ:</span>
-						<span class="payment__amount">{{item['price']}} ₽</span>
+						<span class="payment__amount">6600 ₽</span>
 					</div>
 
 					{% if lead_promo %}
 					<div class="payment__inner">
 						<div class="payment__btns-wrap">
-							<button class="template-btn" type="button" id="cardBtn">
+							<button class="template-btn" type="button" id="cardBtn2">
 								<span>Оплатить картой</span>
 							</button>
 
 							<img src="img/visa-logo.svg" alt="visa">
 						</div>
 						<div class="payment__btns-wrap">
-							<button class="template-btn" type="button" id="ntzdBtn">
+							<button class="template-btn" type="button" id="ntzdBtn2">
 								<span>Оплатить в ntz</span>
 							</button>
 							<img src="img/ntz-logo.svg" alt="visa">
@@ -308,6 +308,12 @@
 		value=1 min=1 disabled data-price="{{item['price']}}"
 		data-old_price="{{item['old_price']}}" data-name="{{item['name']}}"
 		data-image="{{item['image']}}">
+
+		<input type="hidden" name="item_number" id="annafoody12_ticket"
+		class="items_quantity2"
+		value=1 min=1 disabled data-price="6600"
+		data-old_price="6600" data-name="{{item['name']}}"
+		data-image="{{item['image']}}">
 		<!-- GOODS BLOCK ! IMPORTANT-->
 
 		<!-- POLICY BLOCK -->
@@ -324,6 +330,7 @@
 		</div>
 
 		<div class="form__overlay" id="formOverlay"></div>
+		<div class="form__overlay" id="formOverlay2"></div>
 
 		<!-- RUR FORM -->
 		<div class="form__wrap" id="paymentFormRUR">
@@ -383,6 +390,68 @@
 				</div>
 			</form>
 		</div>
+
+		<!-- RUR FORM -->
+		<div class="form__wrap" id="payment2FormRUR">
+			<form action="#" class="form">
+				<span class="form__close-btn" id="close2RurForm"></span>
+				<div class="form__inner">
+					<h3 class="form__title">купить курс</h3>
+					<p class="form__text">Чтобы приобрести курс, заполните все поля</p>
+
+					<input name="name" value="{{lead_name}}" type="text" placeholder="Имя и Фамилия" required
+						class="form__field" id="userName2FormRUR">
+					<input name="phone" value="{{lead_phone}}" type="tel" placeholder="Телефон" class="form__field"
+						required id="userPhone2FormRUR">
+					<input name="email" value="{{lead_email}}" type="email" placeholder="E-mail" required
+						class="form__field" id="userEmail2FormRUR">
+
+					<button id="send_rur2" class="form__btn template-btn noselect" type="button"
+						onclick="addOrder2('FormRUR')">
+						<span>Оплатить</span>
+					</button>
+
+					<p class="form__personal">Нажимая кнопку “Оплатить”, вы соглашаетесь c политикой конфиденциальности
+						и даёте согласие на обработку персональных
+						данных</p>
+				</div>
+			</form>
+		</div>
+
+		<!-- NTZ FORM -->
+		<div class="form__wrap" id="payment2FormNTZ">
+			<form action="#" class="form">
+				<span class="form__close-btn" id="close2NTZForm"></span>
+				<div class="form__inner">
+					<h3 class="form__title">купить курс</h3>
+					<p class="form__text">Чтобы приобрести курс, заполните все поля</p>
+
+					<input name="login" value="{{lead_login}}" type="text" placeholder="Ваш логин в ntz.team" required
+						class="form__field" id="userLogin2FormNTZ">
+
+					<input name="name" value="{{lead_name}}" type="text" placeholder="Имя и Фамилия" required
+						class="form__field" id="userName2FormNTZ">
+					<input name="phone" value="{{lead_phone}}" type="tel" placeholder="Телефон" class="form__field"
+						required id="userPhone2FormNTZ">
+					<input name="email" value="{{lead_email}}" type="email" placeholder="E-mail" required
+						class="form__field" id="userEmail2FormNTZ">
+
+					<button id="send_ntz2" class="form__btn template-btn noselect" type="button"
+						onclick="addOrder2('FormNTZ')">
+						<span>Оплатить</span>
+					</button>
+
+					<p class="form__personal">Нажимая кнопку “Оплатить”, вы соглашаетесь c политикой конфиденциальности
+						и даёте согласие на обработку персональных
+						данных</p>
+
+					{% if lead_promo %}
+					<span class="form__control">Контрольное слово: {{lead_promo}}</span>
+					{% end %}
+				</div>
+			</form>
+		</div>
+
 	</footer>
 	<script src="js/jquery.min.js"></script>
 	<script src="js/base.js"></script>
